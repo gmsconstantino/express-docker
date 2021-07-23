@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "fixerkubecluster-bb52"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "fixerkubecluster-bb52"
+  template:
+    metadata:
+      labels:
+        app: "fixerkubecluster-bb52"
+    spec:
+      containers:
+        - name: "fixerkubecluster-bb52"
+          image: "fixerskubes1.azurecr.io/fixerkubecluster"
+          ports:
+          - containerPort: 8080
